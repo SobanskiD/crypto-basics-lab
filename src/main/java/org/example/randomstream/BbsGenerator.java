@@ -1,6 +1,9 @@
 package org.example.randomstream;
 import java.math.BigInteger;
 
+/**
+ * Zadanie pkt 1 - generator ciągów binarnych BBS (BigInteger dla długich okresów).
+ */
 public class BbsGenerator {
 
     // n = p*g
@@ -30,13 +33,10 @@ public class BbsGenerator {
         // xi = x(i-1)^2 mod n
         x = x.multiply(x).mod(n);
 
-        //testBit(0) = najmlodszy nit
+        //testBit(0) = najmlodszy bit
         return x.testBit(0) ? 1 : 0;
     }
 
-    /**
-     * zwraca liczbe kolejny bitów jako napis
-     */
     public String nextBits(int count){
         StringBuilder sb = new StringBuilder(count);
 
